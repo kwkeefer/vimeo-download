@@ -74,7 +74,7 @@ Antes de rodar o script, certifique-se de ter o seguinte instalado no seu ambien
 
 Segue a imagem como referencia
 
-[referencia](https://github.com/mangareira/vimeo-download/blob/main/reference.png)
+![referencia](https://github.com/mangareira/vimeo-download/blob/main/reference.png)
 
 
 ### Exemplo de Uso
