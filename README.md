@@ -19,24 +19,38 @@ Antes de rodar o script, certifique-se de ter o seguinte instalado no seu ambien
 - **Python 3.x**
 - **FFmpeg** (para combinar o vídeo e áudio)
 - **youtube-dl** (opcional, dependendo da URL que está sendo utilizada)
-- Dependências Python (instaláveis via `pip`):
-  - `requests`
-  - `tqdm`
 
 ### Instalação
 
-1. Clone o repositório ou copie o código para um arquivo Python no seu projeto.
-2. Instale as dependências necessárias com o seguinte comando:
+Para instalar o Vimeo Downloader, você precisará dos seguintes componentes:
+
+1. **Dependências do sistema:**
+   - **FFmpeg** - Necessário para combinar arquivos de áudio e vídeo
+     - [FFmpeg - Download](https://ffmpeg.org/download.html)
+   - **youtube-dl** - Necessário para alguns formatos de URL do Vimeo
+     - Instale via pip: `pip install youtube-dl`
+
+2. **Instalação do Vimeo Downloader:**
+
+   Recomendamos a instalação usando **uv**, um gerenciador de pacotes Python extremamente rápido:
+
+   - Primeiro, instale o **uv** seguindo as instruções em [https://astral.sh/uv/install](https://astral.sh/uv/install)
+   
+   - Em seguida, instale o Vimeo Downloader diretamente do GitHub:
+     ```bash
+     uv tool install git+https://github.com/mangareira/vimeo-download.git
+     ```
+
+3. **Uso após a instalação:**
+   
+   Após a instalação, você pode usar o comando `vimeo-dl` diretamente no terminal:
    ```bash
-   pip install requests tqdm
+   vimeo-dl -u "URL_DO_VIDEO"
    ```
-
-3. Instale o **FFmpeg** em seu sistema, se ainda não o tiver:
-   - [FFmpeg - Download](https://ffmpeg.org/download.html)
-
-4. Verifique se o **youtube-dl** está instalado:
+   
+   Ou para processar múltiplas URLs de um arquivo:
    ```bash
-   pip install youtube-dl
+   vimeo-dl -f "caminho/para/arquivo_com_urls.txt"
    ```
 
 ### Como usar
@@ -50,8 +64,8 @@ Antes de rodar o script, certifique-se de ter o seguinte instalado no seu ambien
 
 3. O script irá:
    - Iterar sobre as URLs fornecidas.
-   - Baixar os segmentos de vídeo (com 720p, se disponível ou maiores) e os segmentos de áudio com a melhor qualidade.
-   - Juntar o vídeo e o áudio em um arquivo MP4.
+   - Baixar os segmentos de vídeo e áudio da URL fornecida.
+   - Juntar o vídeo e áudio em um arquivo MP4.
 
 4. O arquivo final será salvo com o nome `aula-X.mp4` (onde X é o índice da URL na lista).
 
@@ -76,23 +90,6 @@ Segue a imagem como referencia
 
 ![referencia](https://github.com/mangareira/vimeo-download/blob/main/reference.png)
 
-
-### Exemplo de Uso
-
-Suponha que você tenha uma URL JSON de um vídeo:
-
-```python
-urls = [
-    "https://vod-adaptive-ak.vimeocdn.com/exp=1724439491~acl=%2FRANDONUUID%2F%2A~hmac=..."
-]
-```
-
-Quando você rodar o script, ele irá:
-
-1. Baixar os segmentos de vídeo e áudio da URL fornecida.
-2. Juntar o vídeo e áudio em um arquivo final com o nome `aula-x.mp4`.
-3. Exibir o progresso do download de cada segmento.
-4. Excluir os arquivos temporários após a combinação.
 
 ### Possíveis Erros
 
