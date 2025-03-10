@@ -1,0 +1,14 @@
+[project]
+name = "vimeo-download"
+version = "0.1.0"
+description = "A tool for downloading videos from Vimeo"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.32.3",
+    "tqdm>=4.67.1",
+    "youtube-dl>=2021.12.17",
+]
+
+[project.scripts]
+vimeo-dl = "vimeo_download.argparser:main"
