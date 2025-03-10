@@ -27,8 +27,6 @@ Para instalar o Vimeo Downloader, você precisará dos seguintes componentes:
 1. **Dependências do sistema:**
    - **FFmpeg** - Necessário para combinar arquivos de áudio e vídeo
      - [FFmpeg - Download](https://ffmpeg.org/download.html)
-   - **youtube-dl** - Necessário para alguns formatos de URL do Vimeo
-     - Instale via pip: `pip install youtube-dl`
 
 2. **Instalação do Vimeo Downloader:**
 
@@ -45,7 +43,7 @@ Para instalar o Vimeo Downloader, você precisará dos seguintes componentes:
    
    Após a instalação, você pode usar o comando `vimeo-dl` diretamente no terminal:
    ```bash
-   vimeo-dl -u "URL_DO_VIDEO"
+   vimeo-dl -u "URL_DO_VIDEO" -n "NOME_DO_ARQUIVO"
    ```
    
    Ou para processar múltiplas URLs de um arquivo:
